@@ -23,7 +23,7 @@ jobs:
         set -x
         npm install
     - name: Start JSON Server
-      run: pm2 start ./node_modules/.bin/json-server -- ./tests/db.json
+      run: pm2 start ./node_modules/.bin/json-server -- ./test/integration/db.json
     
     - name: Run tests
       run: npm test
