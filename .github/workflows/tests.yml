@@ -1,0 +1,32 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  test-app:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+
+    - name: Install Process Manager for Node.js
+      run: |
+        set -x
+        npm install -g pm2
+    - name: Install dependencies
+      run: |
+        set -x
+        npm install
+    - name: Start JSON Server
+      run: pm2 start ./node_modules/.bin/json-server -- ./tests/db.json
+    
+    - name: Run tests
+      run: npm test
+      
+    - name: Stop JSON Server
+      run: pm2 stop all
