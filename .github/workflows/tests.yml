@@ -35,7 +35,7 @@ jobs:
       run: pm2 start npm -- start
       
     - name: Start Cypress
-      run: npm cy:run
+      run: npm run cy:run
       
     - name: Stop App
       run: pm2 stop all
