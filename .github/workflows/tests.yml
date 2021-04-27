@@ -30,3 +30,12 @@ jobs:
       
     - name: Stop JSON Server
       run: pm2 stop all
+
+    - name: Start App
+      run: pm2 yarn start    
+      
+    - name: Start Cypress
+      run: yarn cy:run  
+      
+    - name: Stop App
+      run: pm2 stop all      

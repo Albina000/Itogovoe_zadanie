@@ -9,7 +9,9 @@
     "start": "webpack-dev-server",
     "build": "rm -rf dist && webpack --config webpack.config.prod.js",
     "prod": "cp serve.js dist/serve.js && node serve.js",
-    "test": "jest"
+    "test": "jest",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "git://github.com/webcomponents/webcomponentsjs.git#v1.0.0",
@@ -21,8 +23,10 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "babel-loader": "^8.1.0",
+    "cypress": "^7.2.0",
     "html-webpack-plugin": "^4.2.0",
     "jest": "^26.6.3",
+    "js-guid": "^1.0.0",
     "json-server": "^0.16.3",
     "node-fetch": "^2.6.1",
     "webpack": "^4.43.0",
