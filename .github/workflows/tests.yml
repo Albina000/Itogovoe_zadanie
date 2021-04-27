@@ -32,7 +32,7 @@ jobs:
       run: pm2 stop all
 
     - name: Start App
-      run: pm2 start npm run start
+      run: pm2 start npm -- start
       
     - name: Start Cypress
       run: npm cy:run
